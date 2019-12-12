@@ -1,19 +1,24 @@
-const secDiv = document.getElementById('sec');
-const minDiv = document.getElementById('min');
-const hourDiv = document.getElementById('hour');
 
-setInterval(updateClock, 1000);
+const Divsec = document.getElementById("sec");
+const Divmin = document.getElementById("min");
+const Divhour = document.getElementById("hour");
 
-function updateClock(){
-let date = new Date();
-let sec =  date.getSeconds()/60;
-let min = (min.getMinutes() + sec)/60;
-let hour = (hour.getHours() + min)/12;
 
-secDiv.style.transform= "rotate(" + (sec * 360) + " deg)";
-minDiv.style.transform = "rotate(" + (min * 360) + " deg)";
-hourDiv.style.transform = "rotate(" + ( hour * 360) + "deg)";
+function UpdateClock(){
+  var date = new Date();
+  let hour = date.getHours();
+  let min = date.getMinutes();
+  let sec = date.getSeconds();
+  console.log("Hour: "+ hour + " Minute: "+ min + " Second: "+ sec);
 
+  let hrPosition = hour*360/12 + ((min * 360/60)/12) ;
+  let minPosition = (min * 360/60) + (sec* 360/60)/60;
+  let secPosition = sec * 360/60;
+
+  Divhour.style.transform = "rotate(" + hrPosition + "deg)";
+  Divmin.style.transform = "rotate(" + minPosition + "deg)";
+  Divsec.style.transform = "rotate(" + secPosition + "deg)";
 }
 
-function updateClock();
+
+var interval = setInterval(UpdateClock, 1000);
