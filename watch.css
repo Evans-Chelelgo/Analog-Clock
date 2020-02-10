@@ -1,11 +1,17 @@
 *{
   padding: 0%;
-  margin: 0%;  
+  margin: 0%;
+  box-sizing:border-box;  
 }
 .body{
     justify-content: center;
     align-items: center;
     display: flex;
+}
+.container{
+
+padding-left: 50px ;
+
 }
 .Clock{
 
@@ -15,10 +21,11 @@
     border: 2px solid; 
     display:absolute;
     border-radius: 50%;
-    background-color: cornsilk;
+    background-color: rgb(223, 199, 121);
     position: relative;
     overflow: hidden;
     background:linear-gradient(45deg);
+    padding-right: 200px;
 }
 
 .Clock:before{
@@ -53,6 +60,17 @@
     left:0;
     font-size:2rem;
     font-weight:700;
+    padding: 8px;
+}
+.num:after{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 15px;
+    background-color: rgb(89, 85, 90);
 }
 
 
@@ -154,4 +172,5 @@
     height: 20%;
     border-radius:50%;
     background-color: black;
+    
 }

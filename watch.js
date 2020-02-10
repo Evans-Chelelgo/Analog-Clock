@@ -21,4 +21,4 @@ function UpdateClock(){
 }
 
 
-var interval = setInterval(UpdateClock, 1000);
+var interval = setInterval(UpdateClock, 100);
